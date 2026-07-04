@@ -44,8 +44,9 @@ Policies deleted successfully
 }
 ?>
 
+<div class="table-wrapper">
 
-    <table border="1">
+<table>
         <tr>
             <th>Policy ID</th>
             <th>Client ID</th>
@@ -90,5 +91,6 @@ echo "<tr>
 }
 ?>
     </table>
+</div>
 </body>
 </html>

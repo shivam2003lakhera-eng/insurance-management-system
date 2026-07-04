@@ -53,7 +53,9 @@ Payment deleted successfully
 
 ?>
 
-    <table border="1">
+   <div class="table-wrapper">
+
+<table>
         <tr>
             <th>Payment ID</th>
             <th>Policy ID</th>
@@ -119,6 +121,7 @@ echo "<tr>
 
 }
 ?> </table>
+</div>
   
 </body>
 </html>

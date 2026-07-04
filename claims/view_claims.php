@@ -53,8 +53,9 @@ Claim deleted successfully
 }
 
 ?>
+<div class="table-wrapper">
 
-    <table border="1">
+<table>
         <tr>
             <th>Claim ID</th>
             <th>Policy ID</th>
@@ -112,11 +113,13 @@ Delete
 } else {
 
 echo "<tr>
-<td colspan='7'>No claim found.</td>
+<td colspan='6'>No claim found.</td>
 </tr>";
 
 }
 ?>
     </table>
+
+</div>
 </body>
 </html>

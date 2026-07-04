@@ -17,6 +17,8 @@
 
 --border:#d1d5db;
 
+--shadow:0 4px 12px rgba(0,0,0,0.08);
+
 }
 
 
@@ -433,7 +435,7 @@ footer{
     table{
 
         display:block;
-
+        white-space:nowrap;
         overflow-x:auto;
 
     }
@@ -444,6 +446,10 @@ footer{
 
     }
 
+    th,td{
+    padding:8px;
+    font-size:13px;
+}
 }
 
 
@@ -594,4 +600,14 @@ button{
 
     background:#dc2626;
 
+}
+
+.table-wrapper{
+    width:95%;
+    margin:auto;
+    overflow-x:auto;
+}
+
+.table-wrapper table{
+    min-width:1100px;
 }
