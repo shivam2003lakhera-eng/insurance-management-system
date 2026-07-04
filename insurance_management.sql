@@ -9,76 +9,91 @@ CREATE TABLE clients (client_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100
 
 -- POLICIES TABLE
 
-CREATE TABLE policies ( policy_id INT AUTO_INCREMENT PRIMARY KEY, policy_type VARCHAR(100) NOT NULL, start_date DATE NOT NULL,
- end_date DATE NOT NULL, premium DECIMAL(10,2) NOT NULL);
+CREATE TABLE policies ( policy_id INT AUTO_INCREMENT PRIMARY KEY, client_id INT NOT NULL, policy_type VARCHAR(100) NOT NULL, start_date DATE NOT NULL,
+ end_date DATE NOT NULL, premium DECIMAL(10,2) NOT NULL, FOREIGN KEY (client_id) REFERENCES clients(client_id) ON DELETE CASCADE );
 
 
 -- CLAIMS TABLE
 
 
-CREATE TABLE claims (claim_id INT AUTO_INCREMENT PRIMARY KEY, client_id INT NOT NULL, policy_id INT NOT NULL, claim_date DATE NOT NULL, claim_amount DECIMAL(10,2) NOT NULL,
- claim_status ENUM( 'Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
- FOREIGN KEY (client_id) REFERENCES clients(client_id) ON DELETE CASCADE,
+CREATE TABLE claims (claim_id INT AUTO_INCREMENT PRIMARY KEY, policy_id INT NOT NULL, claim_date DATE NOT NULL, claim_amount DECIMAL(10,2) NOT NULL,
+ claim_status VARCHAR(20) DEFAULT 'Pending',
  FOREIGN KEY (policy_id) REFERENCES policies(policy_id) ON DELETE CASCADE);
 
 
 -- PAYMENTS TABLE
 
-CREATE TABLE payments (payment_id INT AUTO_INCREMENT PRIMARY KEY, client_id INT NOT NULL, policy_id INT NOT NULL, payment_date DATE NOT NULL, amount DECIMAL(10,2) NOT NULL,
- payment_status ENUM('Pending', 'Completed' ) DEFAULT 'Pending',
- FOREIGN KEY (client_id) REFERENCES clients(client_id) ON DELETE CASCADE,
+CREATE TABLE payments (payment_id INT AUTO_INCREMENT PRIMARY KEY, policy_id INT NOT NULL, payment_date DATE NOT NULL, amount DECIMAL(10,2) NOT NULL,
+ payment_status VARCHAR(20) DEFAULT 'Pending', payment_method VARCHAR(30),
  FOREIGN KEY (policy_id) REFERENCES policies(policy_id) ON DELETE CASCADE );
  
  
  INSERT INTO clients
-(name,email,phone,address,dob,join_date,nominee,nominee_relation,city)
+(name,email,phone,address,city,dob,join_date,nominee,nominee_relation)
 VALUES
-('Amit Sharma','amit.sharma@gmail.com','9876543210', 'Bhopal, MP','1990-05-15','2023-01-10', 'Priya Sharma','Wife','Bhopal'),
+('Amit Sharma','amit.sharma@gmail.com','9876543210', 'Shanti Nagar','Katni','1990-05-15','2023-01-10', 'Priya Sharma','Wife'),
 
-('Rahul Verma','rahul.verma@gmail.com','9876543211', 'Indore, MP','1988-08-22','2023-02-05', 'Neha Verma','Wife','Indore'),
+('Rahul Verma','rahul.verma@gmail.com','9876543211', 'Gayatri Nagar','Katni','1988-08-22','2023-02-05', 'Neha Verma','Wife'),
 
-('Suresh Patel','suresh.patel@gmail.com','9876543212', 'Jabalpur, MP','1993-03-11','2023-03-12', 'Anita Patel','Mother','Jabalpur'),
+('Suresh Patel','suresh.patel@gmail.com','9876543212', 'Sadar','Jabalpur','1993-03-11','2023-03-12', 'Anita Patel','Mother'),
 
-('Vikram Singh','vikram.singh@gmail.com','9876543213', 'Gwalior, MP','1987-09-28','2023-04-01', 'Kavita Singh','Wife','Gwalior'),
+('Vikram Singh','vikram.singh@gmail.com','9876543213', 'Shastri Colony','Katni','1987-09-28','2023-04-23', 'Kavita Singh','Wife'),
 
-('Deepak Joshi','deepak.joshi@gmail.com','9876543214', 'Ujjain, MP','1992-07-17','2023-05-08', 'Sunita Joshi','Mother','Ujjain'),
+('Deepak Joshi','deepak.joshi@gmail.com','9876543214', 'Gandhi Ganj','Katni','1992-07-17','2023-05-08', 'Sunita Joshi','Mother'),
 
-('Rohit Tiwari','rohit.tiwari@gmail.com','9876543215', 'Sagar, MP','1995-11-06','2023-06-14', 'Pooja Tiwari','Sister','Sagar'),
+('Rohit Tiwari','rohit.tiwari@gmail.com','9876543215', 'Wright Town','Jabalpur','1995-11-06','2023-06-14', 'Pooja Tiwari','Sister'),
 
-('Manish Dubey','manish.dubey@gmail.com','9876543216', 'Rewa, MP','1991-02-09','2023-07-20', 'Meena Dubey','Wife','Rewa');
+('Manish Dubey','manish.dubey@gmail.com','9876543216', 'Napier Town','Jabalpur','1991-02-09','2023-07-20', 'Meena Dubey','Wife');
 
 
 INSERT INTO policies
-(policy_type,start_date,end_date,premium)
+(client_id,policy_type,start_date,end_date,premium)
 VALUES
-('Life Insurance','2024-01-01','2034-01-01',25000),
+(1,'Life Insurance','2024-06-01','2034-06-01',25000),
 
-('Health Insurance','2024-02-01','2025-02-01',18000),
+(2,'Health Insurance','2024-02-22','2025-02-21',18000),
 
-('Term Insurance','2024-03-01','2044-03-01',22000),
+(3,'Term Insurance','2024-03-07','2044-03-06',22000),
 
-('Motor Insurance','2024-04-01','2025-04-01',12000),
+(4,'Motor Insurance','2024-04-11','2025-04-11',12000),
 
-('Child Plan','2024-05-01','2039-05-01',28000),
+(5,'Child Plan','2024-05-09','2039-05-09',28000),
 
-('Pension Plan','2024-06-01','2046-06-01',32000),
+(6,'Pension Plan','2024-06-28','2046-06-26',32000),
 
-('ULIP Plan','2024-07-01','2039-07-01',35000);
+(7,'ULIP Plan','2024-07-15','2039-07-13',35000);
 
+INSERT INTO claims
+(policy_id,claim_date,claim_amount,claim_status)
+VALUES
+
+(1,'2025-01-10',50000,'Approved'),
+
+(2,'2025-02-15',25000,'Pending'),
+
+(3,'2025-03-12',40000,'Rejected'),
+
+(4,'2025-04-09',15000,'Approved'),
+
+(5,'2025-05-18',30000,'Pending'),
+
+(6,'2025-06-11',45000,'Approved'),
+
+(7,'2025-07-01',38000,'Rejected');
  
  INSERT INTO payments
-(client_id,policy_id,payment_date,amount,payment_status)
+(policy_id,payment_date,amount,payment_status,payment_method)
 VALUES
-(1,1,'2025-01-05',25000,'Completed'),
+(1,'2025-01-05',25000,'Completed','Cash'),
 
-(2,2,'2025-02-08',18000,'Completed'),
+(2,'2025-02-08',18000,'Completed','UPI'),
 
-(3,3,'2025-03-10',22000,'Pending'),
+(3,'2025-03-10',22000,'Pending','Cash'),
 
-(4,4,'2025-04-05',12000,'Completed'),
+(4,'2025-04-05',12000,'Completed','Bank Transfer'),
 
-(5,5,'2025-05-09',28000,'Completed'),
+(5,'2025-05-09',28000,'Completed','Bank Transfer'),
 
-(6,6,'2025-06-15',32000,'Pending'),
+(6,'2025-06-15',32000,'Pending','UPI'),
 
-(7,7,'2025-07-03',35000,'Completed');
+(7,'2025-07-03',35000,'Completed','Cash');
