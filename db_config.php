@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "2003"; // Update if you set a password for MySQL
+$password = ""; 
 $dbname = "insurance_management";
 
 // Create connection
