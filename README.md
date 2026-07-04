@@ -193,7 +193,7 @@ Example:
 ![Add](screenshots/AddPayment.png)
 
 ### Edit Data Module
-![Edit](screenshots/EditPolicy.png)
+![Edit](screenshots/EditClaim.png)
 
 ### Delete Data Module
 ![Delete](screenshots/DeletePayment.png)
