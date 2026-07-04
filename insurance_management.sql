@@ -1,6 +1,3 @@
-CREATE DATABASE insurance_management;
-USE insurance_management;
-
 -- CLIENTS TABLE
 
 CREATE TABLE clients (client_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, email VARCHAR(100) UNIQUE NOT NULL, phone VARCHAR(20) NOT NULL, address TEXT,
