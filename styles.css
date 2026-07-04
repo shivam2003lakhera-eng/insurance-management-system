@@ -19,7 +19,6 @@
 
 }
 
-/* ================= BODY ================= */
 
 body{
 
@@ -33,8 +32,6 @@ body{
 
 }
 
-
-/* ================= HEADER ================= */
 
 header{
 
@@ -83,8 +80,6 @@ header h1{
 }
 
 
-/* ================= TITLES ================= */
-
 h1{
 
     text-align:center;
@@ -104,7 +99,6 @@ h2{
 }
 
 
-/* ================= DASHBOARD ================= */
 
 .dashboard{
 
@@ -178,8 +172,6 @@ h2{
 }
 
 
-/* ================= FORMS ================= */
-
 .form-container{
 
     width:60%;
@@ -241,8 +233,6 @@ select:focus{
 
 }
 
-/* ================= ACTION BAR ================= */
-
 .action-bar{
 
     width:60%;
@@ -259,8 +249,6 @@ select:focus{
 
 }
 
-
-/* ================= TABLES ================= */
 
 table{
 
@@ -309,8 +297,6 @@ tr:hover{
 }
 
 
-/* ================= BREADCRUMB ================= */
-
 .breadcrumb{
 
     width:95%;
@@ -345,8 +331,6 @@ tr:hover{
 
 }
 
-
-/* ================= ALERTS ================= */
 
 .success{
 
@@ -423,9 +407,6 @@ tr:hover{
 
 }
 
-
-/* ================= FOOTER ================= */
-
 footer{
 
     margin-top:30px;
@@ -440,8 +421,6 @@ footer{
 
 }
 
-
-/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 
@@ -467,7 +446,6 @@ footer{
 
 }
 
-/* ================= BUTTONS ================= */
 
 button{
 
@@ -487,8 +465,6 @@ button{
 
 }
 
-
-/* Dashboard Button */
 
 .back-button{
 
@@ -514,8 +490,6 @@ button{
 
 }
 
-
-/* Add Button */
 
 .add-button{
 
@@ -571,8 +545,6 @@ button{
 }
 
 
-/* Edit Button */
-
 .edit-btn{
 
     display:inline-block;
@@ -599,8 +571,6 @@ button{
 
 }
 
-
-/* Delete Button */
 
 .delete-btn{
 

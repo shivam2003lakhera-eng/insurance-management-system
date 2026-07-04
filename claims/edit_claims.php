@@ -33,8 +33,7 @@ echo "Error: " . $conn->error;
 }
 }
 ?>
-}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">

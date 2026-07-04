@@ -170,6 +170,37 @@ Example:
 
 ---
 
+## Screenshots
+
+## Screenshots
+
+### Dashboard
+![Dashboard](screenshots/Dashboard.png)
+
+### Clients List Module
+![Clients](screenshots/ClientsList.png)
+
+### Policies List Module
+![Policies](screenshots/PoliciesList.png)
+
+### Claims List Module
+![Claimss](screenshots/ClaimsList.png)
+
+### Payments List Module
+![Payments](screenshots/PaymentsList.png)
+
+### Add Data Module
+![Add](screenshots/AddPayment.png)
+
+### Edit Data Module
+![Edit](screenshots/EditPolicy.png)
+
+### Delete Data Module
+![Delete](screenshots/DeletePayment.png)
+
+
+---
+
 ## Author
 
 Shivam Lakhera

@@ -20,17 +20,12 @@ if (isset($_POST['update'])) {
                   WHERE policy_id = $policy_id";
 
     if ($conn->query($sql) === TRUE) {
-
-header("Location: edit_policies.php?id=$policy_id&msg=updated");
-
-exit();
-
-}
+       header("Location: edit_policies.php?id=$policy_id&msg=updated");
+       exit();
+       }
 
 else {
-
-echo "Error: " . $conn->error;
-
+   echo "Error: " . $conn->error;
 }
 }
 ?>
@@ -46,52 +41,35 @@ echo "Error: " . $conn->error;
 <body>
 
 <div class="breadcrumb">
-
 <a href="../index.php">Home</a>
-
 >
-
 <a href="view_policies.php">📄 View Policies</a>
-
 >
-
 <span>Edit Policy</span>
-
-
 </div>
 
 <div class="form-container">
-
 <div class="action-bar">
-
 <a href="../index.php" class="back-button">
 Dashboard
 </a>
-
 <a href="view_policies.php" class="add-button">
 View Policies
 </a>
 </div>
+
 <h1>Edit Policy</h1>
 
 <?php
-
 if(isset($_GET['msg']))
 {
-
 if($_GET['msg']=='updated')
 {
-
 echo "<div class='success'>
-
 Policy updated successfully
-
 </div>";
-
 }
-
 }
-
 ?>
 
     <form method="POST">
