@@ -101,7 +101,7 @@ InsuranceManagement/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/insurance-management-system.git
+git clone https://github.com/shivam2003lakhera-eng/insurance-management-system.git
 ```
 
 ### Import Database
@@ -139,26 +139,6 @@ Open:
 http://localhost/InsuranceManagement/
 ```
 
----
-
-## Screenshots
-
-Add screenshots inside a folder named:
-
-```text
-screenshots/
-```
-
-Example:
-
-* Dashboard
-* Clients Module
-* Policies Module
-* Claims Module
-* Payments Module
-
----
-
 ## Future Enhancements
 
 * Search functionality
@@ -167,10 +147,7 @@ Example:
 * Authentication system
 * Analytics dashboard
 * Report generation
-
 ---
-
-## Screenshots
 
 ## Screenshots
 
@@ -197,12 +174,10 @@ Example:
 
 ### Delete Data Module
 ![Delete](screenshots/DeletePayment.png)
-
-
 ---
 
 ## Author
 
 Shivam Lakhera
 
-B.Sc. Graduate | PHP & MySQL Developer
+B.Sc. Graduate | Database & Backend Developer
