@@ -205,4 +205,4 @@ Example:
 
 Shivam Lakhera
 
-B.Sc. Graduate | Aspiring Data Engineer | PHP & MySQL Developer
+B.Sc. Graduate | PHP & MySQL Developer
